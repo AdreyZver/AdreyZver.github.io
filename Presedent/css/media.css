@@ -1,0 +1,94 @@
+/* Шапка */
+@media screen and (max-width: 858px){
+    .header__container{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 449px){
+    .header__nav{
+        flex-direction: column;
+        justify-content: center;
+    }
+    .header__linkIsActive{
+        margin: 0;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 408px){
+    .header__mainText{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 286px){
+    .header__mainText{
+        font-size: 25px;
+    }
+}
+@media screen and (max-width: 425px){
+    .header__mainText{
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
+/* Блок About_us */
+@media screen and (max-width: 550px){
+    .aboutme__ImageAndAboutMeText{
+        flex-direction: column;
+    }
+    .aboutme__Image{
+        width: 100%;
+    }
+    .aboutme__Text{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+
+
+/* Блок WhyMe */
+@media screen and (max-width: 550px){
+    .WhyMe__ImageAndAboutMeText{
+        flex-direction: column;
+    }
+    .WhyMe__Image{
+        width: 100%;
+    }
+    .WhyMe__Text{
+        width: 100%;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 386px){
+    .WhyMe__mainText{
+        font-size: 30px;
+    }
+}
+
+
+
+
+/* Блок MyObes */
+@media screen and (max-width: 550px){
+    .MyObes__ImageAndAboutMeText{
+        flex-direction: column;
+    }
+    .MyObes__image{
+        width: 100%;
+    }
+    .MyObes__Text{
+        width: 100%;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 386px){
+    .WhyMe__mainText{
+        font-size: 30px;
+    }
+}
