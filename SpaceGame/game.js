@@ -83,7 +83,7 @@ function drawMeteorits(){
         else mass_meteor.pop();
         //Логика столкновения
         if(
-            (mass_meteor[i].y + 40 >= spaceShip.y) &&
+            (mass_meteor[i].y + 30 >= spaceShip.y) &&
             ((mass_meteor[i].x >= spaceShip.x &&
              mass_meteor[i].x <= spaceShip.x + 40) ||
              (mass_meteor[i].x + 20 >= spaceShip.x &&
@@ -105,6 +105,11 @@ function drawMeteorits(){
 }
 
 //Игровой цикл
+
+canvas.addEventListener("mousemove", function(ev) {
+    spaceShip.x = ev.offsetX;
+});
+
 function loop(){
     draw();
 }
