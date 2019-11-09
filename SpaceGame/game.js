@@ -22,7 +22,7 @@ let meteor = {
     sprite : new Image(40 , 40),
     x : Math.floor( 1 + Math.random() * 260 ),
     y : -40,
-    Uy : 0.3,
+    Uy : 0.15,
     setSRC : function() {
         this.sprite.src = "images/meteor.png";
     } ,
@@ -71,7 +71,7 @@ function drawMeteorits(){
                     sprite : new Image(40 , 40),
                     x : Math.floor( 1 + Math.random() * 260 ),
                     y : -40,
-                    Uy : 0.3,
+                    Uy : 0.15,
                     setSRC : function() {
                         this.sprite.src = "images/meteor.png";
                     } ,
@@ -96,10 +96,10 @@ function drawMeteorits(){
             isLoopDoesGo = false;
         } else if(
             mass_meteor[i].y >= spaceShip.y &&
-            mass_meteor[i].y < spaceShip.y + 0.3
+            mass_meteor[i].y < spaceShip.y + 0.15
         ){
             ballSumm++;
-            document.getElementById("result").innerHTML = "Результат : " + (ballSumm / 3);
+            document.getElementById("result").innerHTML = "Результат : " + (ballSumm);
         }
     }
 }
@@ -107,11 +107,6 @@ function drawMeteorits(){
 //Игровой цикл
 function loop(){
     draw();
-    update();
-}
-
-function update(){
-
 }
 
 function draw(){
