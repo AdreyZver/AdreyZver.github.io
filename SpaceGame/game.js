@@ -1,133 +1,129 @@
-//Получение canvas
+//Канвас
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 
-//Получение элементов
+//Получение элементов :
 
-//Image Фон
-let ImgBackFon = new Image(300,300);
-ImgBackFon.src = "images/background.jpg";
+/* Фон */
+let image_background = new Image(300,300);
+image_background.src = "images/background.jpg";
 
-//Корабль
-let spaceShip = {
-    sprite : new Image(40, 40),
-    x : 130,
-    y : 250,
-    Ux : 10
-}
-spaceShip.sprite.src = "images/spaceShip.png";
-
-//Метеориты
-let meteor = {
-    sprite : new Image(40 , 40),
-    x : Math.floor( 1 + Math.random() * 260 ),
-    y : -40,
-    Uy : 0.15,
-    setSRC : function() {
-        this.sprite.src = "images/meteor.png";
-    } ,
-    drawElement : function() {
-        ctx.drawImage( this.sprite , this.x , this.y );
-    }
+/* Космический корабль */
+let image_spaceShip = {
+    sprite : new Image(40,40),
+    dx : 130,
+    dy : 240,
+    Ux : 1
 }
 
-let mass_meteor = new Array();
-mass_meteor.push(meteor);
-mass_meteor[0].setSRC();
-
-
-//Отрисовка обьектов
-document.addEventListener("keydown" , function(ev){ // -- управление кораблем
-    switch(ev.keyCode){
-        case 65:{
-            if(spaceShip.x > 0) spaceShip.x -= spaceShip.Ux;
-        }break;
-        case 68:{
-            if(spaceShip.x + 40 < 300) spaceShip.x += spaceShip.Ux;
-        }break;
-    }
+canvas.addEventListener("mousemove" , function(ev){
+    if(image_spaceShip.dx >= 0 && image_spaceShip.dx + 40 <= 300) image_spaceShip.dx = ev.offsetX - 20;
+    else if(image_spaceShip.dx < 0) image_spaceShip.dx = 0;
+    else if(image_spaceShip.dx + 40 > 300) image_spaceShip.dx = 260;
 });
 
+image_spaceShip.sprite.src = "images/spaceShip.png";
+
+/* Метеориты */
+let image_meteor = {
+    sprite : new Image(40,40),
+    dx : 1 + Math.random() * 260,
+    dy : -40,
+    Uy : 0.05,
+    setSrc : function(){
+        this.sprite.src = "images/meteor.png";
+    } ,
+    drawElement : function(){
+        ctx.drawImage(this.sprite , this.dx , this.dy);
+    }
+}
+image_meteor.setSrc();
+
+let mass_meteors = [];
+
+for(let i = 0; i < 5; i++){
+    mass_meteors.push(
+        {
+            sprite : new Image(40,40),
+            dx : 1 + Math.random() * 260,
+            dy : -40,
+            Uy : 2,
+            setSrc : function(){
+                this.sprite.src = "images/meteor.png";
+            } ,
+            drawElement : function(){
+                ctx.drawImage(this.sprite , this.dx , this.dy);
+            }
+        }
+    );
+    mass_meteors[i].setSrc();
+}
+
+//Прорисовка обьектов :
 function drawBackground(){
-    ctx.drawImage(ImgBackFon , 0 , 0);
+    ctx.drawImage(image_background , 0 , 0);
 }
 
 function drawSpaceShip(){
-    ctx.drawImage(spaceShip.sprite , spaceShip.x , spaceShip.y);
+    ctx.drawImage(image_spaceShip.sprite , image_spaceShip.dx , image_spaceShip.dy);
 }
 
-let ballSumm = 0;
-let isLoopDoesGo = true;
+let isGameLoopDoesWork = true;
+
+let DOM_result = document.getElementById("result");
+
+let sumBall = 0;
 
 function drawMeteorits(){
-    for(let i = 0; i < mass_meteor.length ; i++){
-        mass_meteor[i].setSRC();
-        mass_meteor[i].drawElement();
-        if(mass_meteor[i].y <= 300) mass_meteor[i].y += mass_meteor[i].Uy;
-        else mass_meteor.splice(i, 1);
-        if(mass_meteor.length <= 3)
-            mass_meteor.push(
-                {
-                    sprite : new Image(40 , 40),
-                    x : Math.floor( 1 + Math.random() * 260 ),
-                    y : -40,
-                    Uy : 0.15,
-                    setSRC : function() {
-                        this.sprite.src = "images/meteor.png";
-                    } ,
-                    drawElement : function() {
-                        ctx.drawImage( this.sprite , this.x , this.y );
-                    }
-                }
-            )
-        else mass_meteor.pop();
-        //Логика столкновения
+    for(let i = 0; i < mass_meteors.length; i++){
+        mass_meteors[i].drawElement();
+    }
+
+    if(mass_meteors[0].dy <= 300){
+        for(let i = 0; i < mass_meteors.length; i++){
+            mass_meteors[i].dy += mass_meteors[i].Uy;
+        }
+    } else{
+        for(let i = 0; i < mass_meteors.length; i++){
+            mass_meteors[i].dy = -40;
+            mass_meteors[i].dx = 1 + Math.random() * 260;
+        }
+    }
+
+    for(let i = 0; i < mass_meteors.length; i++){
         if(
-            (mass_meteor[i].y + 30 >= spaceShip.y) &&
-            ((mass_meteor[i].x >= spaceShip.x &&
-             mass_meteor[i].x <= spaceShip.x + 40) ||
-             (mass_meteor[i].x + 20 >= spaceShip.x &&
-             mass_meteor[i].x + 20 <= spaceShip.x + 40) ||
-             (mass_meteor[i].x + 40 >= spaceShip.x &&
-             mass_meteor[i].x + 40 <= spaceShip.x + 40))
-        ){
-            document.getElementById("result").innerHTML = "Проигрыш";
-            document.getElementById("result").style.color = "red";
-            isLoopDoesGo = false;
-        } else if(
-            mass_meteor[i].y >= spaceShip.y &&
-            mass_meteor[i].y < spaceShip.y + 0.15
-        ){
-            ballSumm++;
-            document.getElementById("result").innerHTML = "Результат : " + (ballSumm);
+            ((mass_meteors[i].dy + 30 >= image_spaceShip.dy && mass_meteors[i].dy + 30 <= image_spaceShip.dy + 40) || (mass_meteors[i].dy >= image_spaceShip.dy && mass_meteors[i].dy <= image_spaceShip.dy + 40)) &&
+
+            (
+                (mass_meteors[i].dx + 8 >= image_spaceShip.dx && mass_meteors[i].dx + 8 <= image_spaceShip.dx + 40) ||
+                (mass_meteors[i].dx + 16 >= image_spaceShip.dx && mass_meteors[i].dx + 16 <= image_spaceShip.dx + 40) ||
+                (mass_meteors[i].dx + 24 >= image_spaceShip.dx && mass_meteors[i].dx + 24 <= image_spaceShip.dx + 40)
+            )
+        ) {
+            DOM_result.style.color = "red";
+            DOM_result.innerHTML = "Вы проиграли. Результат : " + (sumBall / 10);
+
+            isGameLoopDoesWork = false;
+        } else if (
+          mass_meteors[i].dy >= image_spaceShip.dy && mass_meteors[i].dy <= image_spaceShip.dy + 2
+        ) {
+          sumBall++;
+          DOM_result.innerHTML = "Результат: " + (sumBall / 10);
         }
     }
 }
 
-//Игровой цикл
-
-canvas.addEventListener("mousemove", function(ev) {
-    spaceShip.x = ev.offsetX;
-});
-
-function loop(){
-    draw();
-}
-
-function draw(){
+//Игровой цикл :
+function gameLoop(){
+    if(isGameLoopDoesWork == false) return;
+    ctx.clearRect(0 , 0, 300 , 300);
     drawBackground();
     drawSpaceShip();
     drawMeteorits();
+    window.requestAnimationFrame(gameLoop);
 }
 
-meteor.sprite.addEventListener("load" , function(){
-    
-    let gameMainLoop = setInterval( function(){
-        if(isLoopDoesGo){
-            ctx.clearRect(0 , 0 , 300 , 300);
-            loop();
-        } else{
-            clearInterval(gameMainLoop);
-        }
-    } , 1000 / 20 );
+image_meteor.sprite.addEventListener("load", function(){
+    gameLoop();
+    window.requestAnimationFrame(gameLoop);
 });
