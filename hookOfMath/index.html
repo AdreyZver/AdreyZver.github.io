@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Hook of Makar</title>
+        <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            .wrapper{ width: 800px; height: 600px; margin: 0 auto; }
+            body { background-color: #1f1e1e; }
+            .fon_audio_wrapper{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+            .score_view {
+                position: fixed;
+                right: 1px;
+                bottom: 1px;
+                border-radius: 100%;
+                background-color: #fff;
+                border: 1px solid black;
+                width: 50px;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                font-size: 25px;
+                z-index: 9999;
+            }
+            .button-wrapper{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+            .ReloadButton{
+                outline: none;
+                border: 2px solid blue;
+                border-radius: 15px;
+                width: 150px;
+                height: 50px;
+                font-weight: bold;
+                font-size: 17px;
+                overflow: hidden;
+            }
+        </style>
+        <script src="game.js" defer></script>
+    </head>
+
+    <body>
+        <div class="score_view" id="score_view_id">0</div>
+
+        <noscript>
+            <style>
+                p.noscript_window {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    font-size: 24px;
+                    background-color: #fff;
+                    color: red;
+                    font-weight: bold;
+                    z-index: 9999;
+                }
+            </style>
+            <p class="noscript_window">
+                В вашем браузере не включен JavaScript. <br>
+                Включите его в настройках браузера.
+            </p>
+        </noscript>
+
+        <div class="wrapper">
+            <canvas width="800" height="600" id="canvas"></canvas>
+        </div>
+        <div class="fon_audio_wrapper">
+            <audio src="Audio/fon_melody.mp3" controls loop></audio>
+        </div>
+        <div class="button-wrapper">
+            <button type="button" onclick="window.location.reload()" class="ReloadButton">Перезагрузить</button>
+        </div>
+    </body>
+</html>
