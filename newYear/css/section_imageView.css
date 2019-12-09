@@ -1,0 +1,42 @@
+/*Блок для подробного просмотра изображений из слайдера*/
+.imageView{
+	position: fixed;
+	width: 100vw;
+	height: 75vh;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: 11001;
+}
+
+
+.imageView__relativeBlock{
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow-y: scroll;
+}
+
+
+.imageView__relativeBlock__image{
+	width: 50%;
+}
+
+
+.imageView__relativeBlock__button{
+	position: absolute;
+	z-index: 11100;
+	top: 0;
+	right: 0;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	outline: none;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+}

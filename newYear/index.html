@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Новый год</title>
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="images/favicon.png" type="image/png">
+        <!-- Стили -->
+        <link rel="stylesheet" href="css/fonts.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/section_timeShow.css">
+        <link rel="stylesheet" href="css/section_mainSlider.css">
+        <link rel="stylesheet" href="css/aside_left.css">
+        <link rel="stylesheet" href="css/section_imageView.css">
+        <!-- Скрипты -->
+        <script src="js/main.js" defer></script>
+    </head>
+
+    <body>
+
+
+
+        <!-- Если не включен JS -->
+        <noscript>
+            <style>
+                .noscript_error-block {
+                    position: fixed;
+                    z-index: 10000;
+                    top: 0;
+                    width: 100vw;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    background: #000000;
+                    color: #ffffff;
+                    font-size: 2vw;
+                    padding: 1em;
+                    font-family: 'Times New Roman', Times, serif;
+                }
+            </style>
+            <div class="noscript_error-block">
+                В вашем браузере не включена поддержка Java Script. <br>
+                Перейдите в настройки, чтобы дать разрешение браузеру на использование Java Script.
+            </div>
+        </noscript>
+        <!-- / Если не включен JS -->
+
+
+
+
+
+        <!-- Фон для всего -->
+        <div class="body_background">
+            <div class="body_background_darkSide"></div>
+        </div>
+        <!-- / Фон для всего -->
+
+
+
+        
+
+        <!-- боковая панель -->
+        <aside class="aside_left" id="aside_left_id" style="left: -120%;">
+            <div class="aside_left__audio-box">
+
+                <p class="aside_left__name-of-audio">Christmas dunk :</p>
+                <audio src="audio/christmas_dunk.mp3" controls class="aside_left__audio-box__audio-element"></audio>
+
+                <p class="aside_left__name-of-audio">Пей пиво :</p>
+                <audio src="audio/maks_korzh__vse_love.mp3" controls class="aside_left__audio-box__audio-element"></audio>
+
+            </div>
+        </aside>
+        <!-- / боковая панель -->
+
+
+
+
+
+        <!-- Шапка -->
+        <header class="header" id="header_id">
+            <img src="images/header/menu_icon.png" alt="Меню" class="header_menu-image" id="header_menu-image_id">
+            <p class="header_mainText">Новый год</p>
+        </header>
+        <!-- / Шапка -->
+
+
+
+
+
+        <!-- Окно для подробного просмотра картинок -->
+        <section class="imageView" id="imageView__id" style="display: none;">
+            <div class="imageView__relativeBlock">
+                <img src="" alt="Изображение" class="imageView__relativeBlock__image"
+                id="imageView__relativeBlock__image__id">
+                <button type="button" class="imageView__relativeBlock__button"
+                id="imageView__relativeBlock__button__id">x</button>
+            </div>
+        </section>
+        <!-- / Окно для подробного просмотра картинок -->
+
+
+
+
+
+
+
+        <!-- Сколько осталось до НГ -->
+        <section class="timeShow" id="timeShow_id">
+            <div class="timeShow_timeBlock">
+                <p class="timeShow_block_timer" id="timeShow_block_timer_id-Hours">00</p>
+                <p class="timeShow_block_name">Полных дней</p>
+            </div>
+            :
+            <div class="timeShow_timeBlock">
+                <p class="timeShow_block_timer" id="timeShow_block_timer_id-Minutes">00</p>
+                <p class="timeShow_block_name">Полных часов</p>
+            </div>
+        </section>
+        <!-- / Сколько осталось до НГ -->
+
+
+
+
+
+
+
+
+        <!-- Слайдер с фотографиями -->
+        <section class="mainSlider" id="mainSlider__id">
+
+
+            <div class="mainSlider__buttons" id="mainSlider__buttons__id1"></div>
+            
+            <!-- слайдер -->
+            <div class="mainSlider__slider" id="mainSlider__slider__id">
+                
+                <!-- Элементы слайдера -->
+                <div class="mainSlider__slider__element">
+                    <img src="images/sliderMainImages/one.jpg" alt="Изображение" class="mainSlider__slider__element__image"
+                    title="Зима 2018 года">
+                </div>
+                <div class="mainSlider__slider__element">
+                    <img src="images/sliderMainImages/two.jpg" alt="Изображение" class="mainSlider__slider__element__image"
+                    title="Зима 2018 года">
+                </div>
+                <div class="mainSlider__slider__element">
+                    <img src="images/sliderMainImages/three.jpg" alt="Изображение" class="mainSlider__slider__element__image"
+                    title="Зима 2018 года">
+                </div>
+                <div class="mainSlider__slider__element">
+                    <img src="images/sliderMainImages/four.jpg" alt="Изображение" class="mainSlider__slider__element__image"
+                    title="Зима 2018 года">
+                </div>
+                <div class="mainSlider__slider__element">
+                    <img src="images/sliderMainImages/five.jpg" alt="Изображение" class="mainSlider__slider__element__image"
+                    title="Зима 2018 года">
+                </div>
+                <div class="mainSlider__slider__element">
+                    <img src="images/sliderMainImages/six.jpg" alt="Изображение" class="mainSlider__slider__element__image"
+                    title="Зима 2018 года">
+                </div>
+                <div class="mainSlider__slider__element">
+                    <img src="images/sliderMainImages/seven.jpg" alt="Изображение" class="mainSlider__slider__element__image"
+                    title="Зима 2018 года">
+                </div>
+
+            </div>
+
+            <div class="mainSlider__buttons" id="mainSlider__buttons__id2"></div>
+
+        </section>
+        <!-- / Слайдер с фотографиями -->
+
+
+
+    </body>
+</html>

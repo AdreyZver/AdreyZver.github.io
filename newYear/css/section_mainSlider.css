@@ -1,0 +1,102 @@
+/* Слайдер */
+.mainSlider{
+    width: 98%;
+    height: 30vw;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    margin: 0 auto;
+    margin-top: 10vw;
+    margin-bottom: 50px;
+    border: 1px solid white;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.mainSlider__slider{
+    height: 100%;
+    display: flex;
+    position: relative;
+    transition: .5s linear all;
+    -webkit-transition: .5s linear all;
+    -moz-transition: .5s linear all;
+    -o-transition: .5s linear all;
+}
+
+
+.mainSlider__slider__element{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+.mainSlider__slider__element__image{
+    height: 100%;
+}
+
+
+.mainSlider__buttons{
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-clip: border-box;
+    cursor: pointer;
+    transition: .5s ease-in-out all;
+    -webkit-transition: .5s ease-in-out all;
+    -moz-transition: .5s ease-in-out all;
+    -o-transition: .5s ease-in-out all;
+    z-index: 9999;
+}
+
+.mainSlider__buttons:hover{
+    animation-duration: .5s;
+    animation-iteration-count: infinite;
+    animation-name: forMainSlider;
+    animation-timing-function: linear;
+
+    -webkit-animation-duration: .5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-name: forMainSlider;
+    -webkit-animation-timing-function: linear;
+
+    -moz-animation-duration: .5s;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-name: forMainSlider;
+    -moz-animation-timing-function: linear;
+
+    -o-animation-duration: .5s;
+    -o-animation-iteration-count: infinite;
+    -o-animation-name: forMainSlider;
+    -o-animation-timing-function: linear;
+}
+
+@keyframes forMainSlider{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+#mainSlider__buttons__id1{
+    left: 0;
+    margin-left: 10px;
+    background-image: url("../images/sliderMainImages/ButtonRotate.png");
+}
+
+#mainSlider__buttons__id2{
+    right: 0;
+    margin-right: 10px;
+    background-image: url("../images/sliderMainImages/Button.png");
+}

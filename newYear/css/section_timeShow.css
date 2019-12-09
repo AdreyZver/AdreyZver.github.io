@@ -1,0 +1,25 @@
+.timeShow{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10vw;
+    color: #0000009a;
+}
+.timeShow_timeBlock{
+    background-color: #0000008e;
+    width: 25vw;
+    height: 20vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+.timeShow_block_timer{
+    color: #dadada;
+    font-size: 15vw;
+}
+.timeShow_block_name{
+    color: #dadada;
+    font-size: 4vw;
+}
