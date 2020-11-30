@@ -1,0 +1,52 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+
+body {
+    background-color: lightgray;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-attachment: fixed;
+}
+
+header {
+    background-color: tomato;
+    padding: 14px;
+}
+
+nav {
+    background-color: lightgray;
+    border: 3px solid black;
+    display: inline-block;
+    margin-top: 5%;
+    margin-left: 5%;
+    padding: 5%;
+}
+
+ul {
+    list-style: decimal;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: orangered;
+    font-weight: bold;
+}
+
+.about_me{
+    margin-top: 14px;
+    margin-left: 5%;
+    background-color: aqua;
+    width: fit-content;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+.about_me--host_list{
+    margin-top: 24px;
+}
