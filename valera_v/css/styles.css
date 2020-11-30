@@ -1,0 +1,35 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+header {
+    padding: 20px;
+    background-color: deeppink;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid black;
+}
+nav{
+    background-color: lightgray;
+    padding: 14px;
+    border-bottom: 1px solid black;
+}
+.nav_el{
+    display: inline-block;
+}
+.nav_el + .nav_el--ml {
+    margin-left: 20px;
+}
+.nav_el > a {
+    text-decoration: none;
+    color: black;
+}
+.about_d {
+    display: flex;
+    padding: 14px;
+}
+.about_d p, .about_d img {
+    width: 50%;
+}
+footer {
+    background-color: darkgray;
+    padding: 10px;
+}
