@@ -1,0 +1,22 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+
+body {
+    background-color: coral;
+}
+
+h1 {
+    background-color: brown;
+}
+
+a {
+    text-decoration: none;
+    color: darkgreen;
+}
+
+li {
+    padding: 14px;
+}
+
+ul {
+    background-color: lightgray;
+}
