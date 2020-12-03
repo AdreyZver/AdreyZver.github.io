@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: lightgray;
+}
+header {
+  padding: 14px;
+  background-color: black;
+  color: white;
+}
+header a {
+  text-decoration: none;
+  color: orangered;
+  font-weight: bold;
+}
+.about {
+  width: 100%;
+  padding: 14px;
+  display: flex;
+  flex-direction: row;
+}
+.about p,
+.about img {
+  width: 50%;
+}
