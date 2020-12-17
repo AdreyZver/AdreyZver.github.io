@@ -1,0 +1,17 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+
+body {
+    background-color: lightgray;
+}
+
+h1 {
+    background-color: rgb(27, 168, 27);
+}
+ul {margin-left: 5%;}
+a {
+    text-decoration: none;
+}
+
+li {
+    padding: 14px;
+}
