@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация | TavBet</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/favicon.svg" alt="Логотип компании" width="64">
+                <h1>TavBet</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#live">Лайв</a></li>
+                    <li><a href="#line">Линия</a></li>
+                    <li><a href="#promotions">Акции</a></li>
+                </ul>
+            </nav>
+            <div class="auth">
+                <a href="login.html">Вход</a>
+                <a href="register.html">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="registration">
+        <div class="container">
+            <h2>Регистрация</h2>
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="username">Имя пользователя:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Электронная почта:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Подтвердите пароль:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="birthdate">Дата рождения:</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">Я согласен с <a href="#terms">условиями использования</a></label>
+                </div>
+                <button type="submit">
+                    <a style="color: white;" href="account.html">Зарегистрироваться</a>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contacts">
+        <div class="container">
+            <p>Контакты: support@TavBet.ru | +7 (800) 123-45-67</p>
+            <p>© 2025 TavBet. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

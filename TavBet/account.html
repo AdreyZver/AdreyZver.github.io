@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аккаунт | TavBet</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/favicon.svg" alt="Логотип компании" width="64">
+                <h1>TavBet</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#live">Лайв</a></li>
+                    <li><a href="#line">Линия</a></li>
+                    <li><a href="#promotions">Акции</a></li>
+                    <li><a href="results.html">Результаты</a></li>
+                </ul>
+            </nav>
+            <div class="auth">
+                <span>Добро пожаловать, <strong>Account</strong>!</span>
+                <a href="#balance">Баланс: 500 ₽</a>
+                <a href="login.html">Выйти</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="user-dashboard">
+        <div class="container">
+            <h2>Ваш аккаунт</h2>
+            <div class="dashboard-content">
+                <!-- Блок с балансом и активными ставками -->
+                <div class="dashboard-block">
+                    <h3>Баланс</h3>
+                    <p class="balance">500 ₽</p>
+                    <button><a href="balance.html" style="color: white;">Пополнить счет</a></button>
+                    <button><a href="balance_out.html" style="color: white;">Вывести средства</a></button>
+                </div>
+                <div class="dashboard-block">
+                    <h3>Активные ставки</h3>
+                    <ul class="active-bets">
+                        <li>Футбол: Реал Мадрид vs Бавария Мюнхен — <strong>2000 ₽</strong></li>
+                        <li>Теннис: Надаль vs Джокович — <strong>1000 ₽</strong></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recommended-events">
+        <div class="container">
+            <h2>Рекомендуемые события</h2>
+            <div class="events">
+                <div class="event">
+                    <h3>Футбол: Лига Чемпионов</h3>
+                    <p>Манчестер Юнайтед vs Ливерпуль</p>
+                    <p>Начало: 20:00</p>
+                    <button>Ставка на победу МЮ</button>
+                    <button>Ставка на победу Ливерпуля</button>
+                    <button>Ставка на ничью</button>
+                </div>
+                <div class="event">
+                    <h3>Баскетбол: НБА</h3>
+                    <p>Лейкерс vs Уорриорз</p>
+                    <p>Начало: 22:30</p>
+                    <button>Ставка на Лейкерс</button>
+                    <button>Ставка на Уорриорз</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacts">
+        <div class="container">
+            <p>Контакты: support@TavBet.ru | +7 (800) 123-45-67</p>
+            <p>© 2025 TavBet. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>

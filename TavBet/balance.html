@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пополнение баланса | TavBet</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/favicon.svg" alt="Логотип компании" width="64">
+                <h1>TavBet</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#live">Лайв</a></li>
+                    <li><a href="#line">Линия</a></li>
+                    <li><a href="#promotions">Акции</a></li>
+                </ul>
+            </nav>
+            <div class="auth">
+                <span>Добро пожаловать, <strong>Иван</strong>!</span>
+                <a href="#balance">Баланс: 5000 ₽</a>
+                <a href="#logout">Выйти</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="balance-topup">
+        <div class="container">
+            <h2>Пополнение баланса</h2>
+            <form id="topup-form">
+                <div class="form-group">
+                    <label for="amount">Сумма пополнения (₽):</label>
+                    <input type="number" id="amount" name="amount" placeholder="Введите сумму" min="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="payment-method">Способ оплаты:</label>
+                    <select id="payment-method" name="payment-method" required>
+                        <option value="card">Банковская карта</option>
+                        <option value="qiwi">QIWI Кошелек</option>
+                        <option value="yoomoney">ЮMoney</option>
+                        <option value="crypto">Криптовалюта</option>
+                    </select>
+                </div>
+                <button type="submit">Пополнить</button>
+            </form>
+        </div>
+    </section>
+
+    <footer id="contacts">
+        <div class="container">
+            <p>Контакты: support@TavBet.ru | +7 (800) 123-45-67</p>
+            <p>© 2025 TavBet. Все права защищены.</p>
+        </div>
+    </footer>
+</body>
+</html>
