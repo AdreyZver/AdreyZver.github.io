@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Фон (опционально) -->
+  <rect width="16" height="16" fill="#1E1E1E" />
+
+  <!-- Буква T -->
+  <rect x="4" y="2" width="2" height="10" fill="#FF4757" />
+  <rect x="2" y="2" width="6" height="2" fill="#FF4757" />
+
+  <!-- Буква B (динамичная, с наклоном) -->
+  <path d="M10,2 L10,14 Q10,14 12,14 Q14,14 14,12 Q14,10 12,10 L10,10 Q10,2 12,2 Q14,2 14,4" fill="#2ED573" transform="skewX(-10)" />
+  <path d="M10,10 L10,12 Q10,12 12,12 Q14,12 14,11 Q14,10 12,10 L10,10" fill="#2ED573" transform="skewX(-10)" />
+
+  <!-- Эффект движения (стрелка) -->
+  <polygon points="14,8 15,7 15,9" fill="#FFA502" />
+  <line x1="12" y1="8" x2="15" y2="8" stroke="#FFA502" stroke-width="1" stroke-linecap="round" />
+</svg>
